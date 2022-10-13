@@ -17,8 +17,10 @@ numpy
 ```bash
 ├── datasets
 │   ├── baseball.csv
+│   ├── dogs.csv  # 20221003
 │   └── cta_daily_station_totals.csv
 ├── practice2.ipynb  # 20220919
 ├── practice3.ipynb  # 20220926
-└── dogs.csv  # 20221003
+├── practice4.ipynb  # 20221003
+└── 
 ``` 
