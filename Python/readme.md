@@ -1,6 +1,5 @@
-# Creative Software Design
+# Python
 
-한양대학교 1학년 2학기 김현준 교수님의 "창의적 소프트웨어 프로그래밍" 과목 관련 파일입니다.  
 Code by 2022094093 Dohoon Kim, Dept. of Data Science
 
 ## What libraries?
@@ -15,12 +14,23 @@ numpy
 ## Files
 
 ```bash
-├── datasets
-│   ├── baseball.csv
-│   ├── dogs.csv  # 20221003
-│   └── cta_daily_station_totals.csv
-├── practice2.ipynb  # 20220919
-├── practice3.ipynb  # 20220926
-├── practice4.ipynb  # 20221003
-└── 
+.ipynb_checkpoints
+datasets
+   ├── avoplotto.pkl
+   ├── baseball.csv
+   ├── cta_daily_station_totals.csv
+   ├── dogs.csv
+   ├── homeless_data.pkl
+   ├── sales-feb-2015.csv
+   ├── sales-jan-2015.csv
+   ├── sales-mar-2015.csv
+   ├── temperature.csv
+   └── walpart_sales.pkl
+practice2.ipynb
+practice3.ipynb
+practice4.ipynb
+practice5.ipynb
+practice6.ipynb
+practice7.ipynb
+readme.md
 ``` 
