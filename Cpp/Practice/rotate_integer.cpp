@@ -20,7 +20,6 @@ void rotateLeft(int* pa, int* pb, int* pc) {
     *pa = *pb;
     *pb = *pc;
     *pc = temp;
-    cout << *pa << ":" << *pb << ":" << *pc << endl;
 }
 
 void rotateRight(int* pa, int* pb, int* pc) {
@@ -29,15 +28,14 @@ void rotateRight(int* pa, int* pb, int* pc) {
     *pc = *pb;
     *pb = *pa;
     *pa = temp;
-    cout << *pa << ":" << *pb << ":" << *pc << endl;
 }
 
 int main() {
     int a = 10, b = 20, c = 30;
     int input;
     bool repeat = true;
-    cout << a << ":" << b << ":" << c << endl;
     while (repeat) {
+        cout << a << ":" << b << ":" << c << endl;
         cout << "Input : ";
         cin >> input;
         switch (input){

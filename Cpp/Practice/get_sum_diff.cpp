@@ -1,6 +1,9 @@
+/*
+Write a program that outputs the sum (a+b) and difference (a-b) of two integers a and b.
+*/
+
 #include <iostream>
 
-// Write a program that outputs the sum (a+b) and difference (a-b) of two integers a and b.
 using namespace std;
 
 void getSumDiff(int a, int b, int* pSum, int* pDiff) {
