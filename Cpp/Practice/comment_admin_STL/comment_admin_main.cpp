@@ -22,18 +22,14 @@ int main(void)
     s = "This class is awesome.";
     admin->addChat(s);
     
-    bool initial = true;
-
+    bool init = true;
     while(true)
     {
-        if (initial){
-            cout << endl;
-            admin->printChat();
-            initial = false;
-        }
-        
         string command;
-        cout << "> ";
+        if (init){
+            admin->printChat();
+            init = false;
+        }
         getline(cin, command);
         
         if (command == "#quit") break;
@@ -41,32 +37,26 @@ int main(void)
         {
             /* remove chat */
             int numCommas;
-            int numChats = admin->getChatCount();
             string substr = command.substr(8);
             stringstream ss(substr);
-            bool hasComma = command.find(',') != string::npos;
+            bool hasComma =  command.find(',') != string::npos;
             bool hasHyphen = command.find('-') != string::npos;
             bool succeed = false;
-
             if (hasComma && hasHyphen) {
                 cerr<<"Invalid input: combination of different commands."<<endl;
                 exit(1);
             }
-
             else if (hasComma) {
                 numCommas = count(substr.begin(), substr.end(), ',');
-                int* indices = new int[numCommas];
+                list<int> indices;
                 int cnt = 0;
                 for (int i; ss >> i && cnt <= numCommas; ) {
-                    indices[cnt++] = i;
+                    indices.push_back(i);
                     if (ss.peek() == ',')
                         ss.ignore();
                 }
-                succeed = admin->removeChat(indices, numCommas);
-                /* remove chats using member function of CommentAdmin if comment has comma  */
-                delete[] indices;
+                succeed = admin->removeChat(indices);
             }
-
             else if (hasHyphen) {
                 int start, end;
                 if (! (ss >> start)) 
@@ -74,20 +64,16 @@ int main(void)
                 ss.ignore();
                 if (! (ss >> end)) 
                     continue;
-                /* remove chats using member function of CommentAdmin if comment has hyphen  */
                 succeed = admin->removeChat(start, end);
             }
-
             else {
                 int ind;
                 if (! (ss >> ind))
                     continue;
                 succeed = admin->removeChat(ind);
-                /* remove just one comment*/
             }
-            if (succeed) {
+            if (succeed)
                 admin->printChat();
-            }
         }
 	else if (command[0] == '#') continue;
         else if (admin->addChat(command)) 
