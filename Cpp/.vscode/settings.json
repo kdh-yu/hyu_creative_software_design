@@ -4,6 +4,10 @@
     },
     "files.associations": {
         "iostream": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "iosfwd": "cpp",
+        "filesystem": "cpp",
+        "chrono": "cpp",
+        "map": "cpp"
     }
 }
